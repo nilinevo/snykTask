@@ -1,7 +1,6 @@
 from flask import Flask
 import json
 import urllib.request
-#import urllib
 import sys
 import time
 import re
@@ -71,8 +70,6 @@ def parse_json(key, value , depth):
                     r = re.compile("^[0-9]+[.][0-9]+[.][0-9]+$")
                     if r.match(value) is None:
                         value = parse_val(value)
-                    #print("-" * depth + key + ", " + value)
-                    #for i in range(depth):
                     res+= ("&#8208"*depth)
                     res+=(key + ", " + value)
                     res+=("<br />")
